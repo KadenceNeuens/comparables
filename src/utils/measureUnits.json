@@ -1,0 +1,40 @@
+[
+    [
+        "Meters",
+        "Feet",
+        "Miles"
+    ],
+    [
+        "Liters",
+        "Cubic Meters",
+        "Gallons"
+    ],
+    [
+        "Grams",
+        "Kilograms",
+        "Pounds"
+    ],
+    [
+        "Grams",
+        "Kilograms",
+        "Pounds"
+    ],
+    [
+        "Celsius",
+        "Fahrenheit",
+        "Kelvin"
+    ],
+    [
+        "Milliseconds",
+        "Seconds",
+        "Minutes",
+        "Hours",
+        "Days",
+        "Weeks",
+        "Months",
+        "Years"
+    ],
+    [
+        "Candela"
+    ]
+]

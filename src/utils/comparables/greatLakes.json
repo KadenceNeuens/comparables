@@ -1,0 +1,31 @@
+{
+    "LakeMichigan": {
+        "gallons" : 1299318233965714.2,
+        "cubicMiles" : 1180,
+        "liters" : 4918454554019884
+    },
+
+    "LakeSuperior": {
+        "gallons" : 3193239727542856.5,
+        "cubicMiles" : 2900,
+        "liters" : 12087727293777680
+    },
+
+    "LakeHuron" : {
+        "gallons" : 935949575314285.6,
+        "cubicMiles" : 850,
+        "liters" : 3542954551624492.5
+    },
+
+    "LakeOntario" : {
+        "gallons" : 432739038939428.56,
+        "cubicMiles" : 393,
+        "liters" : 1638095457398147.8
+    },
+
+    "LakeErie" : {
+        "gallons" : 127729589101714.28,
+        "cubicMiles" : 116,
+        "liters" : 483509091751107.25
+    }
+}

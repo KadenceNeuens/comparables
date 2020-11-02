@@ -1,0 +1,12 @@
+.Wrapper
+{
+    box-sizing: border-box;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}

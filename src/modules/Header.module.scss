@@ -1,0 +1,45 @@
+@import "./colors.scss";
+
+.Header
+{
+  height: 60vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: $color-primary-0;
+}
+
+.HeaderText
+{
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+
+  .HeaderTitle
+  {
+    margin: 0.2em;
+    font-size: 8em;
+    font-weight: bold;
+    color: white;
+
+    @media screen and (max-width: 866px)
+    {
+      font-size: 15vw;
+    }
+  }
+
+  .HeaderCaption
+  {
+    font-size: 2em;
+    color: $color-secondary-2-1;
+
+    @media screen and (max-width: 866px)
+    {
+      font-size: 6vw;
+    }
+  }
+}

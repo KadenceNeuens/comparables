@@ -1,0 +1,23 @@
+{
+    "Meters":"m",
+    "Feet":"ft",
+    "Miles":"mi",
+    "Liters":"L",
+    "Cubic Meters":"m3",
+    "Gallons":"gal",
+    "Grams":"g",
+    "Kilograms":"kg",
+    "Pounds":"lb",
+    "Celsius":"degC",
+    "Fahrenheit":"degF",
+    "Kelvin":"K",
+    "Milliseconds":"ms",
+    "Seconds":"s",
+    "Minutes":"mins",
+    "Hours":"hrs",
+    "Days":"days",
+    "Weeks":"weeks",
+    "Months":"months",
+    "Years":"year",
+    "Candela":"cd"
+}
