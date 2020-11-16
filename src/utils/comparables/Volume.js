@@ -5,7 +5,7 @@
  *
  */
 
-//import * as math from 'mathjs';
+import * as math from 'mathjs';
 import { convert } from '../comparable';
 //import UnitNames from '../measureUnitMathjsNames.json';
 
@@ -26,7 +26,7 @@ function compareGreatLakes(value, unit)
     for(var item in greatLakes)
     {
         let percentVolume = convertedValue/greatLakes[item].liters;
-        output[item] = percentVolume;
+        output[item] = math.round(percentVolume,4);
     }
     console.log("output pre return", output)
     return output;
