@@ -3,6 +3,8 @@ import Canvas from './Canvas';
 
 import LakePaths from './LakePaths';
 
+import { drawPercentFill } from '../../canvasDrawHelpers';
+
 export function renderGreatLakes(input)
 {
     console.log("renderGreatLakes", input);
@@ -14,70 +16,35 @@ export function renderGreatLakes(input)
         output.push(item);
     }
     
-    function drawLakeSuperior(ctx)
-    {
-        ctx.save();
+    function drawLakeMichigan(ctx) 
+    { drawPercentFill(ctx, LakePaths.LakeSuperior, input['LakeMichigan'], -60, -215, "#0000FF", "#000000") }
 
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-        let p = new Path2D(LakePaths.LakeSuperior)
-        ctx.translate(-60,-215);
+    function drawLakeSuperior(ctx) 
+    { drawPercentFill(ctx, LakePaths.LakeSuperior, input['LakeSuperior'], -60, -215, "#0000FF", "#000000") }
 
-        // Fill initial shape fully
-        ctx.fillStyle = "#0000FF"
-        ctx.fill(p)
+    function drawLakeHuron(ctx) 
+    { drawPercentFill(ctx, LakePaths.LakeSuperior, input['LakeHuron'], -60, -215, "#0000FF", "#000000") }
 
-        ctx.restore();
-        ctx.save();
+    function drawLakeOntario(ctx) 
+    { drawPercentFill(ctx, LakePaths.LakeSuperior, input['LakeOntario'], -60, -215, "#0000FF", "#000000") }
 
-        // Remove fill until correct percentage remains
-        let original = ctx.getImageData(0,0,ctx.canvas.width, ctx.canvas.height).data;
-        let originalTotalPixels = getPixelTotal(original),
-            currentPixels = originalTotalPixels,
-            yOffset = 0,
-            current;
-
-            console.log("Image data",original);
-            console.log("Goal Percent", input['LakeSuperior']);
-        while(currentPixels/originalTotalPixels > input['LakeSuperior'])
-        {
-            ctx.clearRect(0,0,ctx.canvas.width, yOffset);
-            current = ctx.getImageData(0,0,ctx.canvas.width, ctx.canvas.height).data;
-            currentPixels = getPixelTotal(current);
-            yOffset++;
-            if (yOffset > ctx.canvas.height)
-            {
-                alert("Error, yOffset off canvas, Y offset: " + yOffset);
-                break;
-            }
-            console.log("Current pixel percent", currentPixels/originalTotalPixels);
-        }
-        console.log("Completed!", currentPixels/originalTotalPixels);
-        console.log(currentPixels);
-        console.log(originalTotalPixels);
-
-        // Draw outline over modified fill
-        ctx.translate(-60,-215);
-        ctx.stroke(p);
-        ctx.restore();
-    }
-
-    function getPixelTotal(imageData)
-    {
-        let totalPixelCount = 0;
-        for(let i = 0; i < imageData.length; i += 4)
-        {
-            if (imageData[i+3] > 0) totalPixelCount++;
-        }
-        console.log("TotalPixelCount",totalPixelCount)
-        return totalPixelCount;
-    }
+    function drawLakeErie(ctx) 
+    { drawPercentFill(ctx, LakePaths.LakeSuperior, input['LakeErie'], -60, -215, "#0000FF", "#000000") }
 
     return(
         output.map((item, index) => {
             switch(item)
             {
+                case "LakeMichigan":
+                    return <div>{item}, {input[item]*100}{"%"} <Canvas draw={drawLakeMichigan} width='600' height='300'/></div>
                 case "LakeSuperior":
                     return <div>{item}, {input[item]*100}{"%"} <Canvas draw={drawLakeSuperior} width='600' height='300'/></div>
+                case "LakeHuron":
+                    return <div>{item}, {input[item]*100}{"%"} <Canvas draw={drawLakeHuron} width='600' height='300'/></div>
+                case "LakeOntario":
+                    return <div>{item}, {input[item]*100}{"%"} <Canvas draw={drawLakeOntario} width='600' height='300'/></div>
+                case "LakeErie":
+                    return <div>{item}, {input[item]*100}{"%"} <Canvas draw={drawLakeErie} width='600' height='300'/></div>
                 default:
                     return <div>{item}, {input[item]}</div>
             }
